@@ -8,7 +8,7 @@ import "./Board.css";
  *
  * - nrows: number of rows of board
  * - ncols: number of cols of board
- * - chanceLightStartsOn: float, chance any cell is lit at start of game
+ * - chanceLightStartsOn: float between 0 and 1, chance any cell is lit at start of game
  *
  * State:
  *
@@ -33,7 +33,14 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
   /** create a board nrows high/ncols wide, each cell randomly lit or unlit */
   function createBoard() {
     let initialBoard = [];
-    // TODO: create array-of-arrays of true/false values
+    for (let row = 0; row < nrows; row++) {
+      let currentRow = [];
+      for (let col = 0; col < ncols; col++) {
+        const isCurrentLightOn = Math.random() <= chanceLightStartsOn;
+        currentRow.push(isCurrentLightOn);
+      }
+      initialBoard.push(currentRow);
+    }
     return initialBoard;
   }
 
