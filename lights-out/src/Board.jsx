@@ -55,7 +55,10 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
   }
 
   function flipCellsAround(coord) {
+    //make a deep copy of the current state board, then flip the cell corresponding to the coord and the neighbouring cells.
     setBoard(oldBoard => {
+      //here, coord will be something like "0-1" meaning y = 0 aka first row, x = 1 aka second column.
+      //So, it .split("-") will convert it to ["0", "1"] and .map(Number) converts each string to a number aka [0,1].
       const [y, x] = coord.split("-").map(Number);
 
       const flipCell = (y, x, boardCopy) => {
@@ -66,11 +69,16 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
         }
       };
 
-      // TODO: Make a (deep) copy of the oldBoard
+      let newBoard = JSON.parse(JSON.stringify(oldBoard));
 
-      // TODO: in the copy, flip this cell and the cells around it
+      //toggle the cell corresponding to the coords and its neighbors.
+      flipCell(y, x, newBoard);
+      flipCell(y+1, x, newBoard); //bottom neighbor
+      flipCell(y-1, x, newBoard); //top neighbor
+      flipCell(y, x+1, newBoard); //right neighbor
+      flipCell(y, x-1, newBoard); //left neighbor
 
-      // TODO: return the copy
+      return newBoard;
     });
   }
 
