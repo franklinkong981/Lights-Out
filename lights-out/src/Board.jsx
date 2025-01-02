@@ -93,10 +93,14 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
       <div className="Board">
         <table className="Board-table">
           {board.map((row, rowIndex) => {
-            return row.map((light, lightIndex) => {
-              const coords = `${rowIndex}-${lightIndex}`;
-              return <Cell flipCellsAroundMe={evt => flipCellsAround(coords)} isLit={light}/>;
-            });
+            return (
+              <tr className="Board-row">
+                {row.map((light, lightIndex) => {
+                  const coords = `${rowIndex}-${lightIndex}`;
+                  return <Cell flipCellsAroundMe={evt => flipCellsAround(coords)} isLit={light}/>;
+                })}
+              </tr>
+            );
           })}
         </table>
       </div>

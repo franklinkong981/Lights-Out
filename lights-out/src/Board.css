@@ -1,3 +1,11 @@
 .Board {
   margin: 0 auto;
 }
+
+.Board-table {
+  border: 2px solid blue;
+}
+
+.Board-row {
+  border: 2px solid red;
+}
