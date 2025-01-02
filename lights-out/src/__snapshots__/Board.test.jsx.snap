@@ -1,0 +1,87 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Board /> rendering > inital board and win state > matches snapshot for full board 1`] = `
+<DocumentFragment>
+  <h1>
+    LIGHTS OUT!
+  </h1>
+  <div
+    class="Board"
+  >
+    <table
+      class="Board-table"
+    >
+      <tbody
+        class="Board-body"
+      >
+        <tr
+          class="Board-row"
+        >
+          <td
+            class="Cell Cell-lit"
+            role="button"
+          >
+            ON
+          </td>
+          <td
+            class="Cell Cell-lit"
+            role="button"
+          >
+            ON
+          </td>
+          <td
+            class="Cell Cell-lit"
+            role="button"
+          >
+            ON
+          </td>
+        </tr>
+        <tr
+          class="Board-row"
+        >
+          <td
+            class="Cell Cell-lit"
+            role="button"
+          >
+            ON
+          </td>
+          <td
+            class="Cell Cell-lit"
+            role="button"
+          >
+            ON
+          </td>
+          <td
+            class="Cell Cell-lit"
+            role="button"
+          >
+            ON
+          </td>
+        </tr>
+        <tr
+          class="Board-row"
+        >
+          <td
+            class="Cell Cell-lit"
+            role="button"
+          >
+            ON
+          </td>
+          <td
+            class="Cell Cell-lit"
+            role="button"
+          >
+            ON
+          </td>
+          <td
+            class="Cell Cell-lit"
+            role="button"
+          >
+            ON
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DocumentFragment>
+`;

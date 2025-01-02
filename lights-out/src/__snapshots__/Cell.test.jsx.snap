@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Cell /> rendering > matches snapshot when lit 1`] = `
+<DocumentFragment>
+  ON
+</DocumentFragment>
+`;
+
+exports[`<Cell /> rendering > matches snapshot when not lit 1`] = `
+<DocumentFragment>
+  OFF
+</DocumentFragment>
+`;
