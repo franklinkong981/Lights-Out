@@ -90,22 +90,25 @@ function Board({ nrows=3, ncols=3, chanceLightStartsOn=0.5 }) {
     );
   } else {
     return (
-      <div className="Board">
-        <table className="Board-table">
-          <tbody className="Board-body">
-            {board.map((row, rowIndex) => {
-              return (
-                <tr className="Board-row" key={rowIndex}>
-                  {row.map((light, lightIndex) => {
-                    const coords = `${rowIndex}-${lightIndex}`;
-                    return <Cell key={coords} flipCellsAroundMe={evt => flipCellsAround(coords)} isLit={light}/>;
-                  })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
+      <>
+        <h1>LIGHTS OUT!</h1>
+        <div className="Board">
+          <table className="Board-table">
+            <tbody className="Board-body">
+              {board.map((row, rowIndex) => {
+                return (
+                  <tr className="Board-row" key={rowIndex}>
+                    {row.map((light, lightIndex) => {
+                      const coords = `${rowIndex}-${lightIndex}`;
+                      return <Cell key={coords} flipCellsAroundMe={evt => flipCellsAround(coords)} isLit={light}/>;
+                    })}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </>
     );
   }
 }

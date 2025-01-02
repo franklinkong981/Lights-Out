@@ -1,8 +1,15 @@
 .Board {
+  width: 90vw;
+  padding: 10px;
+  border: 2px solid blue;
+  background-color: lightblue;
+  border-radius: 50px;
+  margin: 0 auto;
+  
   display: flex;
   justify-content: center;
-  border: 2px solid blue;
 }
 
-
-
+.Board-WinMessage {
+  color: green;
+}
