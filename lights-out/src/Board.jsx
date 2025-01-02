@@ -82,13 +82,26 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
     });
   }
 
-  // if the game is won, just show a winning msg & render nothing else
-
-  // TODO
-
-  // make table board
-
-  // TODO
+  if (hasWon()) {
+    return (
+      <div className="Board">
+        <h1 className="Board-WinMessage">YOU WON</h1>
+      </div>
+    );
+  } else {
+    return (
+      <div className="Board">
+        <table className="Board-table">
+          {board.map((row, rowIndex) => {
+            return row.map((light, lightIndex) => {
+              const coords = `${rowIndex}-${lightIndex}`;
+              return <Cell flipCellsAroundMe={evt => flipCellsAround(coords)} isLit={light}/>;
+            });
+          })}
+        </table>
+      </div>
+    );
+  }
 }
 
 export default Board;
