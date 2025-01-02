@@ -1,11 +1,8 @@
 .Board {
-  margin: 0 auto;
-}
-
-.Board-table {
+  display: flex;
+  justify-content: center;
   border: 2px solid blue;
 }
 
-.Board-row {
-  border: 2px solid red;
-}
+
+
